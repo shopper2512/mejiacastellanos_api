@@ -9,6 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::get('/zonas',[ZonaController::class,'obtenerZonas']);
-
-Route::get('/zona/{idzona}',[ZonaController::class,'obtenerZona']);
+Route::get('/zonas',[ZonaController::class,'obtenerZonas']); //PLURAL
+Route::get('/zona/{idzona}',[ZonaController::class,'obtenerZona']); //SINGULAR
+Route::get('/zonaspais/{idpais}',[ZonaController::class,'obtenerZonaPais']);
+Route::get('/nuevazona',[ZonaController::class,'crearZona']);
